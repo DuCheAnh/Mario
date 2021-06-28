@@ -1,86 +1,162 @@
-#pragma once
+#ifndef __GAMEOBJECT_H__
+#define __GAMEOBJECT_H__
 
-#include <Windows.h>
 #include <d3dx9.h>
 #include <vector>
+#include <algorithm>
 
-#include "Sprites.h"
+#include "SpriteManager.h"
+#include "AnimationManager.h"
+#include "Camera.h"
+#include "Textures.h"
 
-
-using namespace std;
-
-#define ID_TEX_BBOX -100		// special texture to draw object bounding box
-
-class CGameObject; 
-typedef CGameObject * LPGAMEOBJECT;
+class GameObject;
+typedef GameObject* LPGAMEOBJECT;
 
 struct CCollisionEvent;
-typedef CCollisionEvent * LPCOLLISIONEVENT;
+typedef CCollisionEvent* LPCOLLISIONEVENT;
 struct CCollisionEvent
 {
 	LPGAMEOBJECT obj;
 	float t, nx, ny;
-	CCollisionEvent(float t, float nx, float ny, LPGAMEOBJECT obj = NULL) { this->t = t; this->nx = nx; this->ny = ny; this->obj = obj; }
 
-	static bool compare(const LPCOLLISIONEVENT &a, LPCOLLISIONEVENT &b)
+	float dx, dy;		// *RELATIVE* movement distance between this object and obj
+
+	CCollisionEvent(float t, float nx, float ny, float dx = 0, float dy = 0, LPGAMEOBJECT obj = NULL)
+	{
+		this->t = t;
+		this->nx = nx;
+		this->ny = ny;
+		this->dx = dx;
+		this->dy = dy;
+		this->obj = obj;
+	}
+
+	static bool compare(const LPCOLLISIONEVENT& a, LPCOLLISIONEVENT& b)
 	{
 		return a->t < b->t;
 	}
 };
 
-
-
-class CGameObject
+enum class Collision2DTag
 {
-public:
+	FourSide,
+	Top,
+	None,
+};
 
-	float x; 
-	float y;
+enum class Tag
+{
+	platform,
+	enemy,
+	player,
+	projectile,
+	shell,
+	tail
+};
 
-	float dx;	// dx = vx*dt
-	float dy;	// dy = vy*dt
+class GameObject
+{
+protected:
+	
 
-	float vx;
-	float vy;
+	//object direction 1 = right , -1 = left
+	int direction, flipy;
 
-	int nx;	 
+	// object position
+	float x, y;	
+
+	//dx = vx * dt; dy = vy * dt;
+	float dx, dy;
+
+	// object speed
+	float vx, vy;
+
+	// object width, height;
+	float width, height;
 
 	int state;
 
-	DWORD dt; 
+	Collision2DTag ColTag;
 
-	vector<LPANIMATION> animations;
+	bool isBeingHold = false;
+	bool isHoldAble = false;
+	DWORD dt;
+	std::unordered_map<std::string,LPANIMATION> animation_set;
 
 public: 
-	void SetPosition(float x, float y) { this->x = x, this->y = y; }
-	void SetSpeed(float vx, float vy) { this->vx = vx, this->vy = vy; }
-	void GetPosition(float &x, float &y) { x = this->x; y = this->y; }
-	void GetSpeed(float &vx, float &vy) { vx = this->vx; vy = this->vy; }
+	Tag EntityTag;
+	GameObject();
+	~GameObject();
+	//speed and position geter/seter
+	void setPosition(float x, float y);
+	void getPosition(float& x, float& y);
+	
+	void setSpeed(float vx, float vy);
+	void GetSpeed(float& vx, float& vy);
+	
+	void setIsBeingHold(bool isBeingHold);
+	bool IsHoldAble();
+	void setIsHoldAble(bool ishold);
 
-	int GetState() { return this->state; }
+	float getX();
+	void setX(float x);
 
-	void RenderBoundingBox();
+	float getY();
+	void setY(float y);
 
-	LPCOLLISIONEVENT SweptAABBEx(LPGAMEOBJECT coO);
-	void CalcPotentialCollisions(vector<LPGAMEOBJECT> *coObjects, vector<LPCOLLISIONEVENT> &coEvents);
-	void FilterCollision(
-		vector<LPCOLLISIONEVENT> &coEvents, 
-		vector<LPCOLLISIONEVENT> &coEventsResult, 
-		float &min_tx, 
-		float &min_ty, 
-		float &nx, 
-		float &ny);
+	float getVx();
+	void setVx(float vx);
 
-	void AddAnimation(int aniId);
+	float getVy();
+	void setVy(float vy);
 
-	CGameObject();
+	float getWidth();
+	void setWidth(float width);
 
-	virtual void GetBoundingBox(float &left, float &top, float &right, float &bottom) = 0;
-	virtual void Update(DWORD dt, vector<LPGAMEOBJECT> *coObjects = NULL);
-	virtual void Render() = 0;
+	float getHeight();
+	void setHeight(float height);
+
+	void setDirection(int direction);
+	int getDirection();
+
+	int getState();
+
+	void RenderBoundingBox(Camera* camera);
+	
+	void AddAnimation(std::string name , LPANIMATION animation);
+	//void setAnimationSet();
+	//void CloneAnimation();
+
+	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom) = 0;
+	virtual void Update(DWORD dt, std::vector<LPGAMEOBJECT>* coObjects = NULL);
+	virtual void Render(Camera* camera) = 0;
 	virtual void SetState(int state) { this->state = state; }
 
+	virtual void OnOverLap(GameObject* object) {};
+	bool IsOverLapped(GameObject* object);
+	bool CheckOverlapped(float left, float top, float right, float bottom, float left1, float top1, float right1, float bottom1);
 
-	~CGameObject();
+	LPCOLLISIONEVENT SweptAABBEx(LPGAMEOBJECT coO);
+	void CalcPotentialCollisions(std::vector<LPGAMEOBJECT>* coObjects, std::vector<LPCOLLISIONEVENT>& coEvents);
+	void FilterCollision(
+		std::vector<LPCOLLISIONEVENT>& coEvents,
+		std::vector<LPCOLLISIONEVENT>& coEventsResult,
+		float& min_tx,
+		float& min_ty,
+		float& nx,
+		float& ny,
+		float& rdx,
+		float& rdy);
+	void FilterCollisionX(std::vector<LPCOLLISIONEVENT>& coEvents,
+		std::vector<LPCOLLISIONEVENT>& coEventsResult,
+		float& min_tx,
+		float& nx, float& rdx);
+	void FilterCollisionY(std::vector<LPCOLLISIONEVENT>& coEvents,
+		std::vector<LPCOLLISIONEVENT>& coEventsResult,
+		float& min_ty,
+		float& ny, float& rdy);
+	virtual void OnCollisionEnter(LPGAMEOBJECT obj, int nx, int ny) {};
 };
 
+#endif

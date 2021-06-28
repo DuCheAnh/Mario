@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\FrameWork">
+      <UniqueIdentifier>{d13acdd7-9429-4947-b4a1-65ba20fa5967}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Debug">
+      <UniqueIdentifier>{408fd39c-5126-47ac-86f4-051244d0ee43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Object">
+      <UniqueIdentifier>{b20ce330-8505-461a-8559-f4176398b49e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Animation, Sprite and Texture">
+      <UniqueIdentifier>{7a6c2e3f-179e-4ec4-867a-3fa3ec6c032d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\tinyXML">
+      <UniqueIdentifier>{de6383f9-5258-4f82-9257-b8a248e8825d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\KeyHandler">
+      <UniqueIdentifier>{374efde2-b374-4e82-a315-4f5be6c4d02d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Utils">
+      <UniqueIdentifier>{8f23e39c-19eb-4290-b5ee-db293df63aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity">
+      <UniqueIdentifier>{1f3618df-83ea-4f4d-8ab1-ac4a1e308832}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Map">
+      <UniqueIdentifier>{ac0d4f8e-3f8e-4c44-89dd-9cfc8d5b980e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Camera">
+      <UniqueIdentifier>{f52d4134-e9be-4f48-a9de-a6bb07e9583d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Map\Tileset">
+      <UniqueIdentifier>{5718cb20-619a-4585-91b8-e23e8a696452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Map\Layer">
+      <UniqueIdentifier>{f1f3040c-d427-4fc8-8d59-c153ff26727b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Mario">
+      <UniqueIdentifier>{327360a0-31b7-4031-a40a-9083e2d4da30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Blocks">
+      <UniqueIdentifier>{e44468bc-d67a-497a-89ca-47ec78b1fe12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Enemy">
+      <UniqueIdentifier>{00eb2f7a-06ab-48ed-a49d-74c3d29e6550}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Misc">
+      <UniqueIdentifier>{0009f9b5-8a93-4d1f-908d-ddd751387990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Game_Variables">
+      <UniqueIdentifier>{454bc349-8cda-4da9-8414-a9db44c69784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Mario\MarioModel">
+      <UniqueIdentifier>{6671e8d9-87b4-4f24-8f71-47599908397e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Mario\MarioModel\MarioState">
+      <UniqueIdentifier>{0c71ac5e-e9fa-4b7f-83a5-8cc6ce525189}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Projectile">
+      <UniqueIdentifier>{5c2b6f52-646d-42ea-9286-b5db906dea78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Blocks\SolidBlocks">
+      <UniqueIdentifier>{4766121c-71d0-4cc4-b458-74dc55c3df59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Entity\Blocks\GhostBlock">
+      <UniqueIdentifier>{6e222f9b-505c-42d7-9a6c-8a541f3fa704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Animation, Sprite and Texture\Animation">
+      <UniqueIdentifier>{9380efbc-6643-472c-8454-ec328804e6c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Animation, Sprite and Texture\Sprite">
+      <UniqueIdentifier>{080125e5-c01f-412e-8412-e06e25cdf99e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\Animation, Sprite and Texture\Texture">
+      <UniqueIdentifier>{043a0153-5fb7-4c53-a31f-e3bee0e67a65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\ScenceManager">
+      <UniqueIdentifier>{70d3b879-0292-468f-9da7-474862b71f69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\ScenceManager\Scence">
+      <UniqueIdentifier>{d18b3817-7ed4-468f-bc8c-9a55436e52fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\FrameWork\ScenceManager\Scence\PlayScence">
+      <UniqueIdentifier>{4a46242c-9fad-4346-ad6c-a6d1c7e16df8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug.cpp">
+      <Filter>Source Files\FrameWork\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files\FrameWork\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyXML\tinyxml\tinyxmlparser.cpp">
+      <Filter>Source Files\FrameWork\tinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyXML\tinyxml\tinystr.cpp">
+      <Filter>Source Files\FrameWork\tinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyXML\tinyxml\tinyxml.cpp">
+      <Filter>Source Files\FrameWork\tinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyXML\tinyxml\tinyxmlerror.cpp">
+      <Filter>Source Files\FrameWork\tinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyEventHandler.cpp">
+      <Filter>Source Files\FrameWork\KeyHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files\FrameWork\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Scence.cpp">
+      <Filter>Source Files\FrameWork\ScenceManager\Scence</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayScence.cpp">
+      <Filter>Source Files\FrameWork\ScenceManager\Scence\PlayScence</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files\FrameWork\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSet.cpp">
+      <Filter>Source Files\FrameWork\Map\Tileset</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>Source Files\FrameWork\Map\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Source Files\FrameWork\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Mario.cpp">
+      <Filter>Source Files\Entity\Mario</Filter>
+    </ClCompile>
+    <ClCompile Include="Global_Variable.cpp">
+      <Filter>Source Files\FrameWork\Game_Variables</Filter>
+    </ClCompile>
+    <ClCompile Include="MarioModel.cpp">
+      <Filter>Source Files\Entity\Mario\MarioModel</Filter>
+    </ClCompile>
+    <ClCompile Include="RacoonMario.cpp">
+      <Filter>Source Files\Entity\Mario\MarioModel\MarioState</Filter>
+    </ClCompile>
+    <ClCompile Include="BigMario.cpp">
+      <Filter>Source Files\Entity\Mario\MarioModel\MarioState</Filter>
+    </ClCompile>
+    <ClCompile Include="SmallMario.cpp">
+      <Filter>Source Files\Entity\Mario\MarioModel\MarioState</Filter>
+    </ClCompile>
+    <ClCompile Include="FireMario.cpp">
+      <Filter>Source Files\Entity\Mario\MarioModel\MarioState</Filter>
+    </ClCompile>
+    <ClCompile Include="Goomba.cpp">
+      <Filter>Source Files\Entity\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Koopa.cpp">
+      <Filter>Source Files\Entity\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="FireShoot.cpp">
+      <Filter>Source Files\Entity\Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackTail.cpp">
+      <Filter>Source Files\Entity\Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenceManager.cpp">
+      <Filter>Source Files\FrameWork\ScenceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="InvisibleBrick.cpp">
+      <Filter>Source Files\Entity\Blocks\SolidBlocks</Filter>
+    </ClCompile>
+    <ClCompile Include="Brick.cpp">
+      <Filter>Source Files\Entity\Blocks\SolidBlocks</Filter>
+    </ClCompile>
+    <ClCompile Include="GhostPlatform.cpp">
+      <Filter>Source Files\Entity\Blocks\GhostBlock</Filter>
+    </ClCompile>
+    <ClCompile Include="KoopaShell.cpp">
+      <Filter>Source Files\Entity\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Source Files\FrameWork\Animation, Sprite and Texture\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationManager.cpp">
+      <Filter>Source Files\FrameWork\Animation, Sprite and Texture\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteManager.cpp">
+      <Filter>Source Files\FrameWork\Animation, Sprite and Texture\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files\FrameWork\Animation, Sprite and Texture\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Textures.cpp">
+      <Filter>Source Files\FrameWork\Animation, Sprite and Texture\Texture</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tinyXML\tinyxml\tinystr.h">
+      <Filter>Source Files\FrameWork\tinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyXML\tinyxml\tinyxml.h">
+      <Filter>Source Files\FrameWork\tinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Source Files\FrameWork\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSet.h">
+      <Filter>Source Files\FrameWork\Map\Tileset</Filter>
+    </ClInclude>
+    <ClInclude Include="SmallMario.h">
+      <Filter>Source Files\Entity\Mario\MarioModel\MarioState</Filter>
+    </ClInclude>
+    <ClInclude Include="RacoonMario.h">
+      <Filter>Source Files\Entity\Mario\MarioModel\MarioState</Filter>
+    </ClInclude>
+    <ClInclude Include="BigMario.h">
+      <Filter>Source Files\Entity\Mario\MarioModel\MarioState</Filter>
+    </ClInclude>
+    <ClInclude Include="FireMario.h">
+      <Filter>Source Files\Entity\Mario\MarioModel\MarioState</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackTail.h">
+      <Filter>Source Files\Entity\Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="FireShoot.h">
+      <Filter>Source Files\Entity\Projectile</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Source Files\FrameWork\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Goomba.h">
+      <Filter>Source Files\Entity\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Koopa.h">
+      <Filter>Source Files\Entity\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="MarioModel.h">
+      <Filter>Source Files\Entity\Mario\MarioModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Scence.h">
+      <Filter>Source Files\FrameWork\ScenceManager\Scence</Filter>
+    </ClInclude>
+    <ClInclude Include="Global_Variable.h">
+      <Filter>Source Files\FrameWork\Game_Variables</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Source Files\FrameWork\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>Source Files\FrameWork\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Source Files\FrameWork\Map\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayScence.h">
+      <Filter>Source Files\FrameWork\ScenceManager\Scence\PlayScence</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Source Files\FrameWork\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyEventHandler.h">
+      <Filter>Source Files\FrameWork\KeyHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Source Files\FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="Mario.h">
+      <Filter>Source Files\Entity\Mario</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenceManager.h">
+      <Filter>Source Files\FrameWork\ScenceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="InvisibleBrick.h">
+      <Filter>Source Files\Entity\Blocks\SolidBlocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Brick.h">
+      <Filter>Source Files\Entity\Blocks\SolidBlocks</Filter>
+    </ClInclude>
+    <ClInclude Include="GhostPlatform.h">
+      <Filter>Source Files\Entity\Blocks\GhostBlock</Filter>
+    </ClInclude>
+    <ClInclude Include="KoopaShell.h">
+      <Filter>Source Files\Entity\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Source Files\FrameWork\Animation, Sprite and Texture\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationManager.h">
+      <Filter>Source Files\FrameWork\Animation, Sprite and Texture\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteManager.h">
+      <Filter>Source Files\FrameWork\Animation, Sprite and Texture\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Source Files\FrameWork\Animation, Sprite and Texture\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Textures.h">
+      <Filter>Source Files\FrameWork\Animation, Sprite and Texture\Texture</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
