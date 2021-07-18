@@ -1,5 +1,4 @@
 #include "Map.h"
-
 Map::Map()
 {
 }
@@ -54,31 +53,52 @@ void Map::LoadMapfromTMX(const char* FilePath, const char* Path)
 				std::string name = TMXObjectsgroup->Attribute("name");
 				if (name == "Solid")
 				{
+					float x, y, width, height;
+
 					object = new InvisibleBrick();
+					TMXObject->QueryFloatAttribute("x", &x);
+					TMXObject->QueryFloatAttribute("y", &y);
+					TMXObject->QueryFloatAttribute("width", &width);
+					TMXObject->QueryFloatAttribute("height", &height);
+
+					object->setX(x);
+					object->setY(y);
+					object->setWidth(width);
+					object->setHeight(height);
+
+					ScenceManager::GetInstance()->getCurrentScence()->AddObject(object);
 				}
 				else if (name == "Ghost")
 				{
+					float x, y, width, height;
+
 					//continue;
 					object = new GhostPlatform();
+					TMXObject->QueryFloatAttribute("x", &x);
+					TMXObject->QueryFloatAttribute("y", &y);
+					TMXObject->QueryFloatAttribute("width", &width);
+					TMXObject->QueryFloatAttribute("height", &height);
+
+					object->setX(x);
+					object->setY(y);
+					object->setWidth(width);
+					object->setHeight(height);
+
+					ScenceManager::GetInstance()->getCurrentScence()->AddObject(object);
 				}
-				else if (name == "Enemies")
+				if (name == "Enemies")
 				{
-					continue;
+					float x, y, width, height;
+					TMXObject->QueryFloatAttribute("x", &x);
+					TMXObject->QueryFloatAttribute("y", &y);
+					Goomba* enemy = new Goomba();
+					enemy->setPosition(x, y);
+					ScenceManager::GetInstance()->getCurrentScence()->AddObject(enemy);
+					OutputDebugStringW(ToLPCWSTR("[INFO] added goomba: \n"));
 				}
 
-				float x, y, width, height;
 
-				TMXObject->QueryFloatAttribute("x", &x);
-				TMXObject->QueryFloatAttribute("y", &y); 
-				TMXObject->QueryFloatAttribute("width", &width);
-				TMXObject->QueryFloatAttribute("height", &height);
-
-				object->setX(x);
-				object->setY(y);
-				object->setWidth(width);
-				object->setHeight(height);
-
-				ScenceManager::GetInstance()->getCurrentScence()->AddObject(object);
+				
 			}
 		}
 

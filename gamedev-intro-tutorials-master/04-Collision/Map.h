@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <d3dx9.h>
-
 #include "Utils.h"
 #include "Layer.h"
 #include "TileSet.h"
@@ -14,7 +13,7 @@
 #include "InvisibleBrick.h"
 #include "GhostPlatform.h"
 #include "ScenceManager.h"
-
+#include "Goomba.h"
 
 class Map
 {

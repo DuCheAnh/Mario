@@ -103,13 +103,13 @@ void Goomba::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 		if (!(GetTickCount() - FlyDieTime_start > GOOMBA_TIME_FLYDIE))
 			vy = -GOOMBA_FLYDIE_FORCE_VY *dt;
 
-		vy += GOOMBA_GRAVITY * dt;
+		//vy += GOOMBA_GRAVITY * dt;
 	}
 
 	//if goomba not die -> can collison with other obj
 	if (goomstate != GoombaState::die && goomstate != GoombaState::flydie)
 	{
-		vy += GOOMBA_GRAVITY * dt;
+		//vy += GOOMBA_GRAVITY * dt;
 		//direction = right
 		if (direction == 1)
 			vx = GOOMBA_WALKING_SPEED * dt;
@@ -142,65 +142,7 @@ void Goomba::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 			vx = -vx;
 		}
 
-		//float min_tx, min_ty, nx = 0, ny;
-		//float rdx = 0;
-		//float rdy = 0;
-
-		//FilterCollision(coEvents, coEventsResult, min_tx, min_ty, nx, ny, rdx, rdy);
-
-		////filter colision axis by axis
-		//if (min_tx > min_ty)
-		//{
-		//	//float px = x;
-		//	x += min_ty * dx;
-		//	y += min_ty * dy + ny * 0.4f;
-		//	dy = 0;
-
-		//	coEvents.clear();
-		//	CalcPotentialCollisions(&coObjectsResult, coEvents);
-		//	if (coEvents.size() > 0)
-		//	{
-		//		FilterCollisionX(coEvents, coEventsResult, min_tx, nx, rdx);
-		//		//x -= min_ty * dx;
-		//		x += min_tx * dx + nx * 0.4f - min_ty * dx;
-		//	}
-		//	else
-		//	{
-		//		x += dx - min_ty * dx;
-		//		nx = 0;
-		//	}
-		//	dy = vy * dt;
-
-		//}
-		//else
-		//{
-		//	//float py = y;
-		//	x += min_tx * dx + nx * 0.4f;
-		//	y += min_tx * dy;
-		//	dx = 0;
-		//	coEvents.clear();
-		//	CalcPotentialCollisions(&coObjectsResult, coEvents);
-		//	if (coEvents.size() > 0)
-		//	{
-		//		FilterCollisionY(coEvents, coEventsResult, min_ty, ny, rdy);
-		//		y += min_ty * dy + ny * 0.4f - min_tx * dy;
-		//	}
-
-		//	else
-		//	{
-		//		y += dy - min_ty * dx;
-		//		ny = 0;
-		//	}
-		//	dx = vx * dt;
-		//}
-
-		//if (ny != 0) vy = 0;
-		//if (nx != 0)
-		//{
-		//	direction = -direction;
-		//	vx = -vx;
-		//}
-
+		
 		for (UINT i = 0; i < coEvents.size(); i++) delete coEvents[i];
 	}
 
