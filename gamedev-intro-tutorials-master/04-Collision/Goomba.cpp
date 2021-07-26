@@ -109,7 +109,7 @@ void Goomba::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 	//if goomba not die -> can collison with other obj
 	if (goomstate != GoombaState::die && goomstate != GoombaState::flydie)
 	{
-		//vy += GOOMBA_GRAVITY * dt;
+		vy += GOOMBA_GRAVITY * dt;
 		//direction = right
 		if (direction == 1)
 			vx = GOOMBA_WALKING_SPEED * dt;

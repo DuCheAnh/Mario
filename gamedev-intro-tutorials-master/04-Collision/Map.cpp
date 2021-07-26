@@ -91,7 +91,7 @@ void Map::LoadMapfromTMX(const char* FilePath, const char* Path)
 					float x, y, width, height;
 					TMXObject->QueryFloatAttribute("x", &x);
 					TMXObject->QueryFloatAttribute("y", &y);
-					Goomba* enemy = new Goomba();
+					Koopa* enemy = new Koopa();
 					enemy->setPosition(x, y);
 					ScenceManager::GetInstance()->getCurrentScence()->AddObject(enemy);
 					OutputDebugStringW(ToLPCWSTR("[INFO] added goomba: \n"));

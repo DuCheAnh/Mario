@@ -8,7 +8,7 @@
 #include "Camera.h"
 // goomba physics
 #define GOOMBA_WALKING_SPEED			0.005f
-#define GOOMBA_GRAVITY					0.005f
+#define GOOMBA_GRAVITY					0.002f
 #define GOOMBA_FLYDIE_FORCE_VY			0.095f
 // goomba time config
 #define GOOMBA_TIME_DIE					1000

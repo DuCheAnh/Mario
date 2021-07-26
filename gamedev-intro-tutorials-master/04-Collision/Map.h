@@ -14,7 +14,7 @@
 #include "GhostPlatform.h"
 #include "ScenceManager.h"
 #include "Goomba.h"
-
+#include "Koopa.h"
 class Map
 {
 	//the cell count of the map
