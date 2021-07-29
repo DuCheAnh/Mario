@@ -167,6 +167,12 @@
     <ClCompile Include="UIObj.cpp">
       <Filter>UI</Filter>
     </ClCompile>
+    <ClCompile Include="PMetter.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="HUD.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyXML\tinyxml\tinystr.h">
@@ -272,6 +278,12 @@
       <Filter>GameObject\Mario\AttackMario</Filter>
     </ClInclude>
     <ClInclude Include="UIObj.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="PMetter.h">
       <Filter>UI</Filter>
     </ClInclude>
   </ItemGroup>

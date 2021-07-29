@@ -4,7 +4,7 @@
 #include <d3dx9.h>
 #include <d3dx9math.h>
 #include <string>
-
+#include <stdlib.h> 
 #include "Game.h" 
 #include "Global_Variable.h"
 
@@ -49,7 +49,12 @@ public:
 	void setScale(float scaleX, float scaleY);
 	void flipX();
 	void flipY();
-
+	int getSpriteWidth() {
+		return abs(this->spriteRect.right - this->spriteRect.left);
+	};
+	int getSpriteHeight() {
+		return abs(this->spriteRect.top - this->spriteRect.bottom);
+	}
 
 };
 

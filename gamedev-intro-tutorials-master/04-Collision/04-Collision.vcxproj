@@ -33,6 +33,7 @@
     <ClCompile Include="GhostPlatform.cpp" />
     <ClCompile Include="Global_Variable.cpp" />
     <ClCompile Include="Goomba.cpp" />
+    <ClCompile Include="HUD.cpp" />
     <ClCompile Include="InvisibleBrick.cpp" />
     <ClCompile Include="Koopa.cpp" />
     <ClCompile Include="KoopaShell.cpp" />
@@ -42,6 +43,7 @@
     <ClCompile Include="Mario.cpp" />
     <ClCompile Include="MarioModel.cpp" />
     <ClCompile Include="PlayScence.cpp" />
+    <ClCompile Include="PMetter.cpp" />
     <ClCompile Include="RacoonMario.cpp" />
     <ClCompile Include="Scence.cpp" />
     <ClCompile Include="ScenceManager.cpp" />
@@ -72,6 +74,7 @@
     <ClInclude Include="GhostPlatform.h" />
     <ClInclude Include="Global_Variable.h" />
     <ClInclude Include="Goomba.h" />
+    <ClInclude Include="HUD.h" />
     <ClInclude Include="InvisibleBrick.h" />
     <ClInclude Include="KeyEventHandler.h" />
     <ClInclude Include="Koopa.h" />
@@ -81,6 +84,7 @@
     <ClInclude Include="Mario.h" />
     <ClInclude Include="MarioModel.h" />
     <ClInclude Include="PlayScence.h" />
+    <ClInclude Include="PMetter.h" />
     <ClInclude Include="RacoonMario.h" />
     <ClInclude Include="Scence.h" />
     <ClInclude Include="ScenceManager.h" />
