@@ -80,9 +80,6 @@ void PlayScence::Render()
 	for (size_t i = 0; i < objects.size(); i++)
 	{
 		objects[i]->Render(camera);
-		//float l, t, r, b;
-		//objects[i]->GetBoundingBox(l, t, r, b);
-		////DebugOut(L"[INFO] objects bounding box %f, %f, %f, %f \n", l, t, r, b);
 	}
 }
 

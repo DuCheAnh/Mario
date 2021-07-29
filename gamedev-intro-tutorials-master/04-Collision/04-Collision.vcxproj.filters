@@ -51,6 +51,9 @@
     <Filter Include="GameObject\Mario\AttackMario">
       <UniqueIdentifier>{3306d626-612c-4a4e-a222-392b34a7e9d6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{8601ef10-a36f-4505-b83a-efa70af3af07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="tinyXML\tinyxml\tinystr.cpp">
@@ -161,6 +164,9 @@
     <ClCompile Include="FireShoot.cpp">
       <Filter>GameObject\Mario\AttackMario</Filter>
     </ClCompile>
+    <ClCompile Include="UIObj.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tinyXML\tinyxml\tinystr.h">
@@ -264,6 +270,9 @@
     </ClInclude>
     <ClInclude Include="FireShoot.h">
       <Filter>GameObject\Mario\AttackMario</Filter>
+    </ClInclude>
+    <ClInclude Include="UIObj.h">
+      <Filter>UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

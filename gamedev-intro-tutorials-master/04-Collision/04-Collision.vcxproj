@@ -54,6 +54,7 @@
     <ClCompile Include="tinyXML\tinyxml\tinyxml.cpp" />
     <ClCompile Include="tinyXML\tinyxml\tinyxmlerror.cpp" />
     <ClCompile Include="tinyXML\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="UIObj.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +91,7 @@
     <ClInclude Include="TileSet.h" />
     <ClInclude Include="tinyXML\tinyxml\tinystr.h" />
     <ClInclude Include="tinyXML\tinyxml\tinyxml.h" />
+    <ClInclude Include="UIObj.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
