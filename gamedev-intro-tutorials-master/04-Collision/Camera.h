@@ -5,6 +5,7 @@
 
 #include "Global_Variable.h"
 #include "Utils.h"
+//#include "GameObject.h"
 
 class Camera
 {
@@ -13,7 +14,7 @@ private:
 	float camera_width;
 	//camera height
 	float camera_height;
-	
+
 	//camera position
 	Vector2 camera_Position;
 
@@ -31,6 +32,8 @@ private:
 
 
 	bool isfollow;
+	bool isstatic;
+	//LPGAMEOBJECT following_object;
 public:
 	Camera();
 	~Camera();
@@ -58,10 +61,15 @@ public:
 	void setScrollX(bool isscrollX);
 	void setScrollY(bool isscrollY);
 
+	void setIsFollow(bool is);
 	bool IsFollow();
+
+	void setIsStatic(bool is);
+	bool IsStatic();
 
 	void Update(DWORD dt);
 
+	//void FollowObject(LPGAMEOBJECT object);
 };
 
 //typedef Camera* LPCAMERA

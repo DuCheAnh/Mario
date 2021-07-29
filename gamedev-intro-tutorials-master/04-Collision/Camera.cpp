@@ -10,10 +10,11 @@ Camera::Camera()
 	//right and bottom should be setCameraXXX(map - camera_width)
 	bound_left = bound_top = bound_right = bound_bottom = 0;
 
-	scroll_x = false;
+	scroll_x = true;
 	scroll_y = false;
 
-	isfollow = true;
+	isfollow = false;
+	isstatic = true;
 }
 
 Camera::~Camera()
@@ -33,7 +34,7 @@ void Camera::setCameraPosition(float x, float y)
 
 void Camera::setCameraPositionX(float x)
 {
-	this->camera_Position.x = x; 
+	this->camera_Position.x = x;
 }
 
 void Camera::setCameraPositionY(float y)
@@ -109,22 +110,53 @@ void Camera::setScrollY(bool isscrollY)
 	this->scroll_y = isscrollY;
 }
 
+void Camera::setIsFollow(bool is)
+{
+	this->isfollow = is;
+}
+
 bool Camera::IsFollow()
 {
 	return this->isfollow;
 }
 
+void Camera::setIsStatic(bool is)
+{
+	this->isstatic = is;
+}
+
+bool Camera::IsStatic()
+{
+	return this->isstatic;;
+}
+
 void Camera::Update(DWORD dt)
 {
+	//if (!(following_object == NULL))
+	//	this->setCameraPosition(following_object->getX() - WINDOW_WIDTH / 2, following_object->getY() - WINDOW_HEIGHT/2);
+
+	//if (following_object != NULL)
+	//{
+	//	if (following_object->getX() < this->bound_left + 48)
+	//	{
+	//		following_object->setX(this->bound_left + 48);
+	//		following_object->setVx(0.0f);
+	//	}
+	//	if (following_object->getX() + 48 > this->bound_right + WINDOW_WIDTH - 200)
+	//	{
+	//		following_object->setX(this->bound_right + WINDOW_WIDTH - 200);
+	//		following_object->setVx(0.0f);
+	//	}
+	//}
 
 	if (scroll_x)
 	{
-		camera_Position.x += CAMERA_DEFAULT_SCROLLING_SPEED_VX * &dt;
+		camera_Position.x += CAMERA_DEFAULT_SCROLLING_SPEED_VX;
 	}
 
 	if (scroll_y)
 	{
-		camera_Position.y += CAMERA_DEFAULT_SCROLLING_SPEED_VY * &dt;
+		camera_Position.y += CAMERA_DEFAULT_SCROLLING_SPEED_VY;
 	}
 
 	//DebugOut(L"[INFO] cam posx: %f \n", camera_Position.x);
@@ -142,4 +174,8 @@ void Camera::Update(DWORD dt)
 		this->camera_Position.y = this->bound_bottom - this->camera_height;
 }
 
+//void Camera::FollowObject(LPGAMEOBJECT object)
+//{
+//	this->following_object = object;
+//}
 
